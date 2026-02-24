@@ -14,10 +14,22 @@ test_data/
 │   │       │   └── 25001/                   # 96 × 15-min files (rref001*.25o)
 │   │       └── 02_canopy/01_GNSS/01_raw/
 │   │           └── 25001/                   # 96 × 15-min files (ract001*.25o)
+│   │
 │   ├── sbf/                                 # Septentrio Binary Format files
 │   │   └── 01_Rosalia/
 │   │       ├── 01_reference/25001/          # 96 × 15-min files (rref001*.25_)
 │   │       └── 02_canopy/25001/             # 96 × 15-min files (ract001*.25_)
+│   │
+│   ├── nmea/                                # NMEA files
+│   │   └── 01_Rosalia/
+│   │       ├── 01_reference/25001/          # 96 × 15-min files (rref001*.251)
+│   │       └── 02_canopy/25001/             # 96 × 15-min files (ract001*.251)
+│   │
+│   ├── rinex_v3_04_nav_data/                 # Rinex v3.04 Mixed Navigation Data
+│   │   └── 01_Rosalia/
+│   │       ├── 01_reference/25001/          # 96 × 15-min files (rref001*.25p)
+│   │       └── 02_canopy/25001/             # 96 × 15-min files (ract001*.25p)
+│   │
 │   ├── aux/                                 # Precise ephemeris products
 │   │   ├── 00_aux_files/
 │   │   │   ├── 01_SP3/                      # COD0MGXFIN 2025-001 orbit (5 min)
@@ -31,10 +43,10 @@ test_data/
 
 ## Receivers
 
-| ID | Type | Station code | Format |
-|---|---|---|---|
-| `reference_01` | Open-sky reference | `rref` | RINEX v3.04, SBF |
-| `canopy_01` | Below-canopy | `ract` | RINEX v3.04, SBF |
+| ID             | Type               | Station code | Format           |
+| -------------- | ------------------ | ------------ | ---------------- |
+| `reference_01` | Open-sky reference | `rref`       | RINEX v3.04, SBF |
+| `canopy_01`    | Below-canopy       | `ract`       | RINEX v3.04, SBF |
 
 ## File naming
 
@@ -55,10 +67,10 @@ ract001d00.25o
 
 COD (Center for Orbit Determination in Europe) final products, 2025-001:
 
-| File | Product | Interval |
-|---|---|---|
-| `COD0MGXFIN_20250010000_01D_05M_ORB.SP3` | Multi-GNSS precise orbits | 5 min |
-| `COD0MGXFIN_20250010000_01D_30S_CLK.CLK` | Precise satellite clocks | 30 s |
+| File                                     | Product                   | Interval |
+| ---------------------------------------- | ------------------------- | -------- |
+| `COD0MGXFIN_20250010000_01D_05M_ORB.SP3` | Multi-GNSS precise orbits | 5 min    |
+| `COD0MGXFIN_20250010000_01D_30S_CLK.CLK` | Precise satellite clocks  | 30 s     |
 
 ## Ignored files
 
