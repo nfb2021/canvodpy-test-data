@@ -11,7 +11,7 @@
 
 # canVODpy — Test Data
 
-Reference GNSS dataset for [canVODpy](https://github.com/nfb2021/canvodpy) pipeline validation and end-to-end testing. Contains real observations from **Rosalia, Austria** — DOY **2025-001** (2025-01-01), full 24-hour day.
+Reference GNSS dataset for [canVODpy](https://github.com/nfb2021/canvodpy) pipeline validation and end-to-end testing. Contains real observations from **Rosalia, Austria** — DOY **2025-001** (2025-01-01), full 24-hour day, and from the **MOFLUX, MO, US** on the same day by courtesy of Caltech via Christian Frankenberg (RINEX 2.11).
 
 > [!CAUTION]
 > **Confidential — Pre-release Data.**
@@ -46,6 +46,13 @@ test_data/
 │   │       │   └── 25001/                     # 96 × 15-min files (rref001*.25o)
 │   │       └── 02_canopy/01_GNSS/01_raw/
 │   │           └── 25001/                     # 96 × 15-min files (ract001*.25o)
+│   │
+│   ├── rinex_v2_11/                           # RINEX v2.11 observation files (Missouri Ozark Site, Missouri, US)
+│   │   └── 02_Moflux/
+│   │       ├── 01_reference/
+│   │       │   └── 25001/                     # 24 × 1-hour files (MOZR01CAL_R_*.rnx)
+│   │       └── 02_canopy/
+│   │           └── 25001/                     # 24 × 1-hour files (MOZA01CAL_R_*.rnx)
 │   │
 │   ├── sbf/                                   # Septentrio Binary Format files
 │   │   └── 01_Rosalia/
@@ -116,6 +123,9 @@ test_data/
 ├── LICENSE
 └── README.md
 ```
+
+The RINEX v2.11 data in `valid/rinex_v2_11/` are from the Missouri Ozark Site in
+Missouri, US, by courtesy of Christian Frankenberg and Vincent Humphrey.
 
 ---
 
