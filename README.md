@@ -11,7 +11,7 @@
 
 # canVODpy — Test Data
 
-Reference GNSS dataset for [canVODpy](https://github.com/nfb2021/canvodpy) pipeline validation and end-to-end testing. Contains real observations from **Rosalia, Austria** — DOY **2025-001** (2025-01-01), full 24-hour day.
+Reference GNSS dataset for [canVODpy](https://github.com/nfb2021/canvodpy) pipeline validation and end-to-end testing. Contains real observations from **Rosalia, Austria** — DOY **2025-001** (2025-01-01), full 24-hour day, and from the **MOFLUX, MO, US** on the same day by courtesy of Caltech via Christian Frankenberg (RINEX 2.11).
 
 > [!CAUTION]
 > **Confidential — Pre-release Data.**
