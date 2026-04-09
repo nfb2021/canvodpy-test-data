@@ -13,12 +13,6 @@
 
 Reference GNSS dataset for [canVODpy](https://github.com/nfb2021/canvodpy) pipeline validation and end-to-end testing. Contains real observations from **Rosalia, Austria** — DOY **2025-001** (2025-01-01), full 24-hour day. RINEX 2.11 data is from **MOFLUX, MO, US** on DOY **2025-001** by courtesy of Caltech via Christian Frankenberg. NMEA data is from **Hainich Nationalpark**  receiver recorded with a **u-blox NEO-M9N** receiver (1 hour on DOY **2026-001**).
 
-> [!CAUTION]
-> **Confidential — Pre-release Data.**
-> This dataset is shared under restricted access. Distribution, redistribution, or publication of this data or any derived results is **not permitted** without explicit written authorization from the author (Nicolas F. Bader, nicolas.bader@tuwien.ac.at). Access is granted solely to individuals authorized by the author.
-
----
-
 ## Usage
 
 This repository is used as the `packages/canvod-readers/tests/test_data/` submodule in canvodpy, and as the `test_data/` directory in canvodpy-demo.

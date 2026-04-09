@@ -1,0 +1,67 @@
+cff-version: 1.2.0
+message: >-
+  If you use this dataset in your research, please cite it using
+  the metadata from this file.
+type: dataset
+title: "canVODpy — Test Data"
+abstract: >-
+  Reference GNSS observation dataset for validation and end-to-end testing
+  of the canVODpy GNSS Transmissometry pipeline. Contains real GNSS
+  observations in RINEX v3.04, RINEX v2.11, Septentrio Binary Format (SBF),
+  and NMEA formats from three field sites: Rosalia (Austria), Missouri Ozark
+  Flux Tower (MOFLUX, USA), and Hainich National Park (Germany). Covers
+  DOY 2025-001 (full 24-hour day) for Rosalia and MOFLUX, and a 1-hour
+  campaign on DOY 2026-001 for Hainich.
+authors:
+  - family-names: Bader
+    given-names: Nicolas François
+    email: nicolas.bader@geo.tuwien.ac.at
+    affiliation: >-
+      Climate and Environmental Remote Sensing Research Unit (CLIMERS),
+      Department of Geodesy and Geoinformation, TU Wien
+    orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"  # TODO: add ORCID
+
+contributors:
+  - family-names: Frankenberg
+    given-names: Christian
+    affiliation: California Institute of Technology (Caltech)
+    orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"  # TODO: add ORCID
+    role: "Data provider (MOFLUX RINEX v2.11)"
+
+  - family-names: Humphrey
+    given-names: Vincent
+    affiliation: California Institute of Technology (Caltech)
+    orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"  # TODO: add ORCID
+    role: "Data provider (MOFLUX RINEX v2.11)"
+
+  - family-names: Schellenberg
+    given-names: Konstantin
+    affiliation: Max Planck Institute for Biogeochemistry (MPI-BGC)
+    orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"  # TODO: add ORCID
+    role: "Data collector (Hainich NMEA, u-blox NEO-M9N)"
+
+repository-code: "https://github.com/nfb2021/canvodpy-test-data"
+url: "https://github.com/nfb2021/canvodpy"
+license: Apache-2.0
+version: "0.1.0"
+date-released: "2026-04-09"
+
+keywords:
+  - GNSS
+  - GNSS Transmissometry
+  - Vegetation Optical Depth
+  - VOD
+  - RINEX
+  - SBF
+  - NMEA
+  - remote sensing
+  - vegetation
+  - test data
+
+references:
+  - type: software
+    title: "canVODpy"
+    authors:
+      - family-names: Bader
+        given-names: Nicolas François
+    repository-code: "https://github.com/nfb2021/canvodpy"
