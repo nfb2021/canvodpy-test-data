@@ -11,7 +11,7 @@
 
 # canVODpy — Test Data
 
-Reference GNSS dataset for [canVODpy](https://github.com/nfb2021/canvodpy) pipeline validation and end-to-end testing. Contains real observations from **Rosalia, Austria** — DOY **2025-001** (2025-01-01), full 24-hour day, and from the **MOFLUX, MO, US** on the same day by courtesy of Caltech via Christian Frankenberg (RINEX 2.11).
+Reference GNSS dataset for [canVODpy](https://github.com/nfb2021/canvodpy) pipeline validation and end-to-end testing. Contains real observations from **Rosalia, Austria** — DOY **2025-001** (2025-01-01), full 24-hour day. RINEX 2.11 data is from **MOFLUX, MO, US** on DOY **2025-001** by courtesy of Caltech via Christian Frankenberg. NMEA data is from **Hainich Nationalpark**  receiver recorded with a **u-blox NEO-M9N** receiver (1 hour on DOY **2026-001**).
 
 > [!CAUTION]
 > **Confidential — Pre-release Data.**
@@ -60,9 +60,13 @@ test_data/
 │   │       └── 02_canopy/25001/               # 96 × 15-min files (ract001*.25_)
 │   │
 │   ├── nmea/                                  # NMEA files
-│   │   └── 01_Rosalia/
+│   │   ├── 01_Rosalia/
 │   │       ├── 01_reference/25001/            # 96 × 15-min files (rref001*.251)
 │   │       └── 02_canopy/25001/               # 96 × 15-min files (ract001*.251)
+│   │
+│   │   └── 02_Hainich/                        # u-blox NEO-M9N, 1-hour campaign (01.01.2026)
+│   │       ├── 01_reference/                  # HAIR02MPI_R_20260010000_01H_01S_AA.nmea
+│   │       └── 02_canopy/                     # HAIA02MPI_R_20260010000_01H_01S_AA.nmea
 │   │
 │   ├── rinex_v3_04_nav_data/                  # RINEX v3.04 Mixed Navigation Data
 │   │   └── 01_Rosalia/
@@ -131,10 +135,10 @@ Missouri, US, by courtesy of Christian Frankenberg and Vincent Humphrey.
 
 ## Receivers
 
-| ID | Type | Station code | Formats |
-|---|---|---|---|
-| `reference_01` | Open-sky reference | `rref` | RINEX v3.04, SBF, NMEA |
-| `canopy_01` | Below-canopy | `ract` | RINEX v3.04, SBF, NMEA |
+| ID | Type | Station code | Formats                             |
+|---|---|---|-------------------------------------|
+| `reference_01` | Open-sky reference | `rref` | RINEX v3.04, RINEX v2.11, SBF, NMEA |
+| `canopy_01` | Below-canopy | `ract` | RINEX v3.04, RINEX v2.11, SBF, NMEA |
 
 ---
 
