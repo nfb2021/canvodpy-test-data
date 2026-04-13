@@ -1,0 +1,57 @@
+{
+  "title": "canVODpy — Test Data",
+  "description": "Reference GNSS observation dataset for validation and end-to-end testing of the canVODpy GNSS Transmissometry pipeline. Contains real GNSS observations in RINEX v3.04, RINEX v2.11, Septentrio Binary Format (SBF), and NMEA formats from three field sites: Rosalia (Austria), Missouri Ozark Flux Tower (MOFLUX, USA), and Hainich National Park (Germany). Covers DOY 2025-001 (full 24-hour day) for Rosalia and MOFLUX, and a 1-hour campaign on DOY 2026-001 for Hainich.",
+  "resource_type": {
+    "type": "dataset"
+  },
+  "license": "Apache-2.0",
+  "creators": [
+    {
+      "name": "Bader, Nicolas François",
+      "affiliation": "Climate and Environmental Remote Sensing Research Unit (CLIMERS), Department of Geodesy and Geoinformation, TU Wien",
+      "orcid": "XXXX-XXXX-XXXX-XXXX"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Frankenberg, Christian",
+      "affiliation": "California Institute of Technology (Caltech)",
+      "orcid": "XXXX-XXXX-XXXX-XXXX",
+      "type": "DataCollector"
+    },
+    {
+      "name": "Humphrey, Vincent",
+      "affiliation": "California Institute of Technology (Caltech)",
+      "orcid": "XXXX-XXXX-XXXX-XXXX",
+      "type": "DataCollector"
+    },
+    {
+      "name": "Schellenberg, Konstantin",
+      "affiliation": "Max Planck Institute for Biogeochemistry (MPI-BGC)",
+      "orcid": "XXXX-XXXX-XXXX-XXXX",
+      "type": "DataCollector"
+    }
+  ],
+  "keywords": [
+    "GNSS",
+    "GNSS Transmissometry",
+    "Vegetation Optical Depth",
+    "VOD",
+    "RINEX",
+    "SBF",
+    "NMEA",
+    "remote sensing",
+    "vegetation",
+    "test data",
+    "canVODpy"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/nfb2021/canvodpy",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "language": "eng",
+  "access_right": "open"
+}
