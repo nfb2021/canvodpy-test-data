@@ -11,7 +11,7 @@
 
 # canVODpy — Test Data
 
-Reference GNSS dataset for [canVODpy](https://github.com/nfb2021/canvodpy) pipeline validation and end-to-end testing. Contains real observations from **Rosalia, Austria** — DOY **2025-001** (2025-01-01), full 24-hour day. RINEX 2.11 data is from **MOFLUX, MO, US** on DOY **2025-001** by courtesy of Caltech via Christian Frankenberg. NMEA data is from **Hainich Nationalpark**  receiver recorded with a **u-blox NEO-M9N** receiver (1 hour on DOY **2026-001**).
+Reference GNSS dataset for [canVODpy](https://github.com/nfb2021/canvodpy) pipeline validation and end-to-end testing. Contains real observations from **Rosalia, Austria** — DOY **2025-001** (2025-01-01), full 24-hour day. RINEX 2.11 data is from **MOFLUX, MO, US** on DOY **2025-001** by courtesy of Caltech via Christian Frankenberg. NMEA data is from **Hainich Nationalpark** receiver recorded with a **u-blox NEO-M9N** receiver (1 hour on DOY **2026-001**).
 
 ## Usage
 
@@ -63,19 +63,21 @@ test_data/
 │   │       └── 02_canopy/                     # HAIA02MPI_R_20260010000_01H_01S_AA.nmea
 │   │
 │   ├── rinex_v3_04_nav_data/                  # RINEX v3.04 Mixed Navigation Data
-│   │   └── 01_Rosalia/
-│   │       ├── 01_reference/25001/            # 96 × 15-min files (rref001*.25p)
-│   │       └── 02_canopy/25001/               # 96 × 15-min files (ract001*.25p)
+│   │   ├── 01_reference/                      # 96 × 15-min files (rref001*.25p)
+│   │   └── 02_canopy/                         # 96 × 15-min files (ract001*.25p)
 │   │
-│   ├── broadcast_ephemerides/                 # Broadcast ephemeris data (from SBF)
+│   ├── rinex_v3_05_stripped/                  # Stripped RINEX v3.05 observation files (MPI-BGC)
+│   │   └── 01_ExampleSite/
+│   │       ├── 01_reference/25001/            # EXPR01MPI_R_20250010000_10S_01S_AA.rnx
+│   │       └── 01_canopy/25001/               # EXPA01MPI_R_20250010000_10S_01S_AA.rnx
+│   │
+│   ├── broadcast_epehemrides/                 # Broadcast ephemeris data (from SBF)
 │   │   └── 02_canopy/
 │   │
-│   ├── aux_data/                              # Precise ephemeris products
-│   │   ├── 00_aux_files/
-│   │   │   ├── 01_SP3/                        # COD0MGXFIN 2025-001 orbit (5 min)
-│   │   │   └── 02_CLK/                        # COD0MGXFIN 2025-001 clock (30 s)
-│   │   ├── 01_SP3/                            # SP3 (pipeline search path)
-│   │   └── 02_CLK/                            # CLK (pipeline search path)
+│   ├── aux_data/                              # Precise ephemeris products + aux Zarr
+│   │   ├── 01_SP3/                            # COD0MGXFIN 2025-001 orbit (5 min)
+│   │   ├── 02_CLK/                            # COD0MGXFIN 2025-001 clock (30 s)
+│   │   └── aux_2025001.zarr/                  # Pre-computed SP3/CLK interpolation cache (gitignored)
 │   │
 │   └── stores/
 │       └── rosalia_rinex/                     # Icechunk store snapshot for store tests
@@ -129,10 +131,10 @@ Missouri, US, by courtesy of Christian Frankenberg and Vincent Humphrey.
 
 ## Receivers
 
-| ID | Type | Station code | Formats                             |
-|---|---|---|-------------------------------------|
-| `reference_01` | Open-sky reference | `rref` | RINEX v3.04, RINEX v2.11, SBF, NMEA |
-| `canopy_01` | Below-canopy | `ract` | RINEX v3.04, RINEX v2.11, SBF, NMEA |
+| ID             | Type               | Station code | Formats                             |
+| -------------- | ------------------ | ------------ | ----------------------------------- |
+| `reference_01` | Open-sky reference | `rref`       | RINEX v3.04, RINEX v2.11, SBF, NMEA |
+| `canopy_01`    | Below-canopy       | `ract`       | RINEX v3.04, RINEX v2.11, SBF, NMEA |
 
 ---
 
@@ -157,10 +159,10 @@ ract001d00.25o
 
 COD (Center for Orbit Determination in Europe) final products, 2025-001:
 
-| File | Product | Interval |
-|---|---|---|
-| `COD0MGXFIN_20250010000_01D_05M_ORB.SP3` | Multi-GNSS precise orbits | 5 min |
-| `COD0MGXFIN_20250010000_01D_30S_CLK.CLK` | Precise satellite clocks | 30 s |
+| File                                     | Product                   | Interval |
+| ---------------------------------------- | ------------------------- | -------- |
+| `COD0MGXFIN_20250010000_01D_05M_ORB.SP3` | Multi-GNSS precise orbits | 5 min    |
+| `COD0MGXFIN_20250010000_01D_30S_CLK.CLK` | Precise satellite clocks  | 30 s     |
 
 ---
 
@@ -182,7 +184,72 @@ The `.gitignore` excludes:
 
 - `.DS_Store` — macOS metadata
 - `*.db` — runtime SQLite caches (e.g. `gnss_satellites_cache.db`)
-- `*.zarr/` — transient Zarr preprocessing caches (rebuilt each run)
+- `*.zarr/` — Zarr caches (e.g. `aux_2025001.zarr` is rebuilt from SP3/CLK on first run; see Zenodo checklist for Zenodo deposit decision)
+
+---
+
+## Data providers
+
+| Contributor             | Affiliation      | Data                           |
+| ----------------------- | ---------------- | ------------------------------ |
+| Nicolas François Bader  | CLIMERS, TU Wien | Rosalia RINEX v3.04, SBF, NMEA |
+| Wouter Dorigo           | CLIMERS, TU Wien | Rosalia RINEX v3.04, SBF, NMEA |
+| Christian Frankenberg   | Caltech          | MOFLUX RINEX v2.11             |
+| Vincent Humphrey        | Caltech          | MOFLUX RINEX v2.11             |
+| Konstantin Schellenberg | MPI-BGC          | Hainich NMEA (u-blox NEO-M9N)  |
+
+---
+
+## Zenodo release — Option A plan
+
+This dataset will be published on Zenodo as a versioned, citable record.
+Metadata is prepared in `.zenodo.json` and `CITATION.cff` on this branch.
+
+### Pre-upload checklist
+
+- [ ] Fill in all ORCID placeholders in `CITATION.cff` and `.zenodo.json`
+- [x] Resolve SP3/CLK duplication — canonical location is `valid/aux_data/{01_SP3,02_CLK}/`;
+  duplicate copies under `valid/aux_data/00_aux_files/` and `valid/rinex_v3_04/01_Rosalia/`
+  have been removed.
+- [ ] Decide on `aux_2025001.zarr`: currently excluded by `.gitignore` (`*.zarr/`).
+  Either commit it (remove from gitignore) or include it as a manually added Zenodo
+  file outside the git archive. Required by demo notebooks 07 and 17.
+- [ ] Rename `valid/broadcast_epehemrides/` → `valid/broadcast_ephemerides/` (typo in
+  directory name introduced when the directory was created).
+- [ ] Add `related_identifiers` entry for `canvodpy-demo` once that repo is public.
+
+### Archive structure (Option A — one archive per format type)
+
+Each archive maps 1:1 to a top-level subdirectory under `valid/`. After extraction
+all archives reconstruct the same `valid/` tree and require no path changes in
+`_paths.py`.
+
+| Archive                       | Contents                                            | Approx. compressed size |
+| ----------------------------- | --------------------------------------------------- | ----------------------- |
+| `rinex_v3_04.tar.gz`          | RINEX v3.04 obs, Rosalia                            | ~160 MB                 |
+| `sbf.tar.gz`                  | SBF binary, Rosalia                                 | ~2.2 GB                 |
+| `nmea.tar.gz`                 | NMEA, Rosalia + Hainich                             | ~35 MB                  |
+| `aux_data.tar.gz`             | SP3, CLK (+ `aux_2025001.zarr` if committed)        | ~110 MB                 |
+| `rinex_v2_11.tar.gz`          | RINEX v2.11, MOFLUX                                 | ~9 MB                   |
+| `rinex_v3_05_stripped.tar.gz` | Stripped RINEX v3.05, ExampleSite (MPI-BGC)         | < 1 MB                  |
+| `nav_data.tar.gz`             | RINEX nav data (.25p), Rosalia                      | ~1.5 MB                 |
+| `stores.tar.gz`               | Icechunk store snapshot, Rosalia                    | < 1 MB                  |
+| `invalid.tar.gz`              | 36 malformed RINEX files                            | ~2.5 MB                 |
+
+### Pooch integration (`_paths.py`)
+
+After the Zenodo DOI is assigned, `_paths.py` in `canvodpy-demo` will be updated
+to add a third resolution path that downloads and caches archives on first access:
+
+```text
+Resolution order:
+1. Monorepo  → packages/canvod-readers/tests/test_data/valid/   (dev)
+2. Standalone clone → ./test_data/valid/                         (git clone)
+3. Pooch cache → ~/.cache/canvodpy/test_data/valid/              (auto-download)
+```
+
+Each path constant (`ROSALIA_CANOPY_DIR`, `SBF_CANOPY_DIR`, etc.) triggers
+download of only the required archive, not the full dataset.
 
 ---
 
