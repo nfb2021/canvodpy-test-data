@@ -190,13 +190,14 @@ The `.gitignore` excludes:
 
 ## Data providers
 
-| Contributor             | Affiliation      | Data                           |
-| ----------------------- | ---------------- | ------------------------------ |
-| Nicolas François Bader  | CLIMERS, TU Wien | Rosalia RINEX v3.04, SBF, NMEA |
-| Wouter Dorigo           | CLIMERS, TU Wien | Rosalia RINEX v3.04, SBF, NMEA |
-| Christian Frankenberg   | Caltech          | MOFLUX RINEX v2.11             |
-| Vincent Humphrey        | Caltech          | MOFLUX RINEX v2.11             |
-| Konstantin Schellenberg | MPI-BGC          | Hainich NMEA (u-blox NEO-M9N)  |
+| Contributor             | Affiliation                       | Data                               |
+| ----------------------- | --------------------------------- | ---------------------------------- |
+| Nicolas François Bader  | CLIMERS, TU Wien                  | Rosalia RINEX v3.04, SBF, NMEA     |
+| Wouter Dorigo           | CLIMERS, TU Wien                  | Rosalia RINEX v3.04, SBF, NMEA     |
+| Eugenio Diaz-Pines      | BFW / KIT / UPM / BOKU           | Head of Rosalia Research Forest    |
+| Christian Frankenberg   | Caltech                           | MOFLUX RINEX v2.11                 |
+| Vincent Humphrey        | MeteoSwiss                        | MOFLUX RINEX v2.11                 |
+| Konstantin Schellenberg | FSU Jena / MPI-BGC                | Hainich NMEA (u-blox NEO-M9N)      |
 
 ---
 
