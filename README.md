@@ -6,6 +6,8 @@
 <!-- Identity -->
 [![canVODpy](https://img.shields.io/badge/canVODpy-test--data-2d6a4f)](https://github.com/nfb2021/canvodpy)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+<!-- Zenodo DOI badge — replace XXXXXXX with the assigned DOI number after first release -->
+<!-- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) -->
 [![CLIMERS @ TU Wien](https://img.shields.io/badge/CLIMERS-TU_Wien-006699)](https://www.tuwien.at/en/mg/geo/climers)
 [![VODnet](https://img.shields.io/badge/-VODnet-2d6a4f?labelColor=555555&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAAXNSR0IArs4c6QAAAHhlWElmTU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAIdpAAQAAAABAAAATgAAAAAAAABIAAAAAQAAAEgAAAABAAOgAQADAAAAAQABAACgAgAEAAAAAQAAAA6gAwAEAAAAAQAAAA4AAAAAjn8NzQAAAAlwSFlzAAALEwAACxMBAJqcGAAAAflJREFUKBWtUEtoE1EUPe+9SczHiam/aixtqi1E7aai4kK0CAVBDFZwrQs3xp2KIriYtiKuav3QRVxYKIjFVihWrCBIaaWioKidQBsxi3SwYmMmkxidYWaemYEEKUgRPHDhXu4575x3gf+NKfVD3UQ2u/Zv7wrLF8mPfV2ZH1ZCNIM7xUCAHHjyfN6wQ8mZo3vvE4Av57tzOjfd/WZpivfJSW5wkzvomnzFe2SFTyyU+iFJtCpk1eaRfOIw84TuRsN7kEkVMDzyEjPvUtga2YiDTRFM5+m+F8XYHMZuzDqaWlQf8yVMpmJ0/DUu9g6hVNQAy8au3W04NHAV85oFRulZS+LDkIjtWmcyHT6vQHYoXwrouTWKkv4LLOAHE4N4K6dxZ2AISl4DpawVDVrYcXSFZtTPGSV8IatjUVErJ+Cwbdstx3Vw8CG+pmQIHg+HUVlWo7aSp/qz9Kn3W5p5S/x4DJ8/lfGt4kAow7bmBpQ9fuQ3RUFtM4Uz61Qk/vijbpLbgtc61n05zjQ1hCvXHmB9fT3OnT8NOWfi+uxP0IJxE4S4jrXzxrffm1xlb75Aud/cEFmD9vYW6KaNUoUmCpS3BblUPNk45sR0UBM6Qzx2qd9LVnfqujGS+64puaX8olEuj4uMHHnc2dTrcFZGtCOMxv11KxP/kfEbTTzNcyb5ar0AAAAASUVORK5CYII=&logoColor=white)](https://vodnet.netlify.app)
 
@@ -71,13 +73,13 @@ test_data/
 │   │       ├── 01_reference/25001/            # EXPR01MPI_R_20250010000_10S_01S_AA.rnx
 │   │       └── 01_canopy/25001/               # EXPA01MPI_R_20250010000_10S_01S_AA.rnx
 │   │
-│   ├── broadcast_epehemrides/                 # Broadcast ephemeris data (from SBF)
+│   ├── broadcast_ephemerides/                 # Broadcast ephemeris data (from SBF)
 │   │   └── 02_canopy/
 │   │
 │   ├── aux_data/                              # Precise ephemeris products + aux Zarr
 │   │   ├── 01_SP3/                            # COD0MGXFIN 2025-001 orbit (5 min)
 │   │   ├── 02_CLK/                            # COD0MGXFIN 2025-001 clock (30 s)
-│   │   └── aux_2025001.zarr/                  # Pre-computed SP3/CLK interpolation cache (gitignored)
+│   │   └── aux_2025001.zarr/                  # Pre-computed SP3/CLK interpolation cache
 │   │
 │   └── stores/
 │       └── rosalia_rinex/                     # Icechunk store snapshot for store tests
@@ -184,7 +186,6 @@ The `.gitignore` excludes:
 
 - `.DS_Store` — macOS metadata
 - `*.db` — runtime SQLite caches (e.g. `gnss_satellites_cache.db`)
-- `*.zarr/` — Zarr caches (e.g. `aux_2025001.zarr` is rebuilt from SP3/CLK on first run; see Zenodo checklist for Zenodo deposit decision)
 
 ---
 
@@ -204,19 +205,18 @@ The `.gitignore` excludes:
 ## Zenodo release — Option A plan
 
 This dataset will be published on Zenodo as a versioned, citable record.
-Metadata is prepared in `.zenodo.json` and `CITATION.cff` on this branch.
+Metadata is prepared in `.zenodo.json` and `CITATION.cff`.
 
 ### Pre-upload checklist
 
-- [ ] Fill in all ORCID placeholders in `CITATION.cff` and `.zenodo.json`
+- [x] Fill in all ORCID placeholders in `CITATION.cff` and `.zenodo.json`
 - [x] Resolve SP3/CLK duplication — canonical location is `valid/aux_data/{01_SP3,02_CLK}/`;
   duplicate copies under `valid/aux_data/00_aux_files/` and `valid/rinex_v3_04/01_Rosalia/`
   have been removed.
-- [ ] Decide on `aux_2025001.zarr`: currently excluded by `.gitignore` (`*.zarr/`).
-  Either commit it (remove from gitignore) or include it as a manually added Zenodo
-  file outside the git archive. Required by demo notebooks 07 and 17.
-- [ ] Rename `valid/broadcast_epehemrides/` → `valid/broadcast_ephemerides/` (typo in
-  directory name introduced when the directory was created).
+- [x] Commit `aux_2025001.zarr` — removed `*.zarr/` from `.gitignore`; the cache is
+  included in the GitHub release archive and in `aux_data.tar.gz`. Required by demo
+  notebooks 07 and 17.
+- [x] Rename `valid/broadcast_epehemrides/` → `valid/broadcast_ephemerides/` (typo fixed).
 - [ ] Add `related_identifiers` entry for `canvodpy-demo` once that repo is public.
 
 ### Archive structure (Option A — one archive per format type)
@@ -230,7 +230,7 @@ all archives reconstruct the same `valid/` tree and require no path changes in
 | `rinex_v3_04.tar.gz`          | RINEX v3.04 obs, Rosalia                            | ~160 MB                 |
 | `sbf.tar.gz`                  | SBF binary, Rosalia                                 | ~2.2 GB                 |
 | `nmea.tar.gz`                 | NMEA, Rosalia + Hainich                             | ~35 MB                  |
-| `aux_data.tar.gz`             | SP3, CLK (+ `aux_2025001.zarr` if committed)        | ~110 MB                 |
+| `aux_data.tar.gz`             | SP3, CLK, `aux_2025001.zarr`                        | ~290 MB                 |
 | `rinex_v2_11.tar.gz`          | RINEX v2.11, MOFLUX                                 | ~9 MB                   |
 | `rinex_v3_05_stripped.tar.gz` | Stripped RINEX v3.05, ExampleSite (MPI-BGC)         | < 1 MB                  |
 | `nav_data.tar.gz`             | RINEX nav data (.25p), Rosalia                      | ~1.5 MB                 |
