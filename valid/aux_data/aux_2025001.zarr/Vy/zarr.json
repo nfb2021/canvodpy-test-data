@@ -1,0 +1,56 @@
+{
+  "shape": [
+    17280,
+    3658
+  ],
+  "data_type": "float64",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        1080,
+        229
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": "NaN",
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "long_name": "y-component of velocity",
+    "standard_name": "v_y",
+    "short_name": "v_y",
+    "axis": "v_y",
+    "units": "m/s",
+    "computation_method": "central_difference",
+    "time_step": 300.0,
+    "reference_frame": "ECEF",
+    "_FillValue": "AAAAAAAA+H8="
+  },
+  "dimension_names": [
+    "epoch",
+    "sid"
+  ],
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}

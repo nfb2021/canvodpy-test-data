@@ -3,6 +3,3 @@
 
 # Runtime SQLite caches
 *.db
-
-# Transient Zarr caches (rebuilt each run)
-*.zarr/
