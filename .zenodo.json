@@ -1,0 +1,70 @@
+{
+  "title": "canVODpy — Test Data",
+  "description": "Reference GNSS observation dataset for validation and end-to-end testing of the canVODpy GNSS Transmissometry pipeline. Contains real GNSS observations in RINEX v3.04, RINEX v2.11, RINEX v3.05 (stripped), Septentrio Binary Format (SBF), and NMEA formats from four field sites: Rosalia (Austria), Missouri Ozark Flux Tower (MOFLUX, USA), Hainich National Park (Germany), and a Max Planck Institute site (MPI-BGC). Covers DOY 2025-001 (full 24-hour day) for Rosalia and MOFLUX, and a 1-hour campaign on DOY 2026-001 for Hainich.",
+  "resource_type": {
+    "type": "dataset"
+  },
+  "license": "Apache-2.0",
+  "creators": [
+    {
+      "name": "Bader, Nicolas François",
+      "affiliation": "Climate and Environmental Remote Sensing Research Unit (CLIMERS), Department of Geodesy and Geoinformation, TU Wien",
+      "orcid": "0000-0002-9932-1925"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Schellenberg, Konstantin",
+      "affiliation": "Friedrich Schiller University Jena, Max Planck Institute for Biogeochemistry",
+      "orcid": "0000-0002-2563-9017",
+      "type": "DataCollector"
+    },
+    {
+      "name": "Dorigo, Wouter",
+      "affiliation": "Climate and Environmental Remote Sensing Research Unit (CLIMERS), Department of Geodesy and Geoinformation, TU Wien",
+      "orcid": "0000-0001-8054-7572",
+      "type": "Supervisor"
+    },
+    {
+      "name": "Diaz-Pines, Eugenio",
+      "affiliation": "Federal Research and Training Centre for Forest, Natural Hazards and Landscape",
+      "orcid": "0000-0001-9935-106X",
+      "type": "ProjectMember"
+    },
+    {
+      "name": "Humphrey, Vincent",
+      "affiliation": "Federal Office of Meteorology and Climatology (MeteoSwiss)",
+      "orcid": "0000-0002-2541-6382",
+      "type": "DataCollector"
+    },
+    {
+      "name": "Frankenberg, Christian",
+      "affiliation": "California Institute of Technology (Caltech)",
+      "orcid": "0000-0002-0546-5857",
+      "type": "DataCollector"
+    }
+  ],
+  "keywords": [
+    "GNSS",
+    "GNSS Transmissometry",
+    "Vegetation Optical Depth",
+    "VOD",
+    "RINEX",
+    "SBF",
+    "NMEA",
+    "remote sensing",
+    "vegetation",
+    "test data",
+    "canVODpy"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/nfb2021/canvodpy",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "language": "eng",
+  "access_right": "open",
+  "version": "0.1.0"
+}

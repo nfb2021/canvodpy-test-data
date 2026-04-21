@@ -1,0 +1,84 @@
+cff-version: 1.2.0
+message: >-
+  If you use this dataset in your research, please cite it using
+  the metadata from this file.
+type: dataset
+title: "canVODpy — Test Data"
+abstract: >-
+  Reference GNSS observation dataset for validation and end-to-end testing
+  of the canVODpy GNSS Transmissometry pipeline. Contains real GNSS
+  observations in RINEX v3.04, RINEX v2.11, RINEX v3.05 (stripped),
+  Septentrio Binary Format (SBF), and NMEA formats from four field sites:
+  Rosalia (Austria), Missouri Ozark Flux Tower (MOFLUX, USA), Hainich
+  National Park (Germany), and a Max Planck Institute site (MPI-BGC). Covers
+  DOY 2025-001 (full 24-hour day) for Rosalia and MOFLUX, and a 1-hour
+  campaign on DOY 2026-001 for Hainich.
+authors:
+  - family-names: Bader
+    given-names: Nicolas François
+    email: nicolas.bader@geo.tuwien.ac.at
+    affiliation: >-
+      Climate and Environmental Remote Sensing Research Unit (CLIMERS),
+      Department of Geodesy and Geoinformation, TU Wien
+    orcid: "https://orcid.org/0000-0002-9932-1925"
+
+contributors:
+  - family-names: Schellenberg
+    given-names: Konstantin
+    affiliation: Friedrich Schiller University Jena, Max Planck Institute for Biogeochemistry
+    orcid: "https://orcid.org/0000-0002-2563-9017"
+    role: "Data collector (Hainich NMEA, u-blox NEO-M9N)"
+
+  - family-names: Dorigo
+    given-names: Wouter
+    affiliation: >-
+      Climate and Environmental Remote Sensing Research Unit (CLIMERS),
+      Department of Geodesy and Geoinformation, TU Wien
+    orcid: "https://orcid.org/0000-0001-8054-7572"
+    role: "Data provider (Rosalia field campaign)"
+
+  - family-names: Diaz-Pines
+    given-names: Eugenio
+    affiliation: >-
+      Federal Research and Training Centre for Forest, Natural Hazards and Landscape, Karlsruher Institut für Technologie, Universidad Politécnica de Madrid, Universität für Bodenkultur Wien
+    orcid: "https://orcid.org/0000-0001-9935-106X"
+    role: "Head of Rosalia Research Forest Center"
+
+  - family-names: Humphrey
+    given-names: Vincent
+    affiliation: Federal Office of Meteorology and Climatology (MeteoSwiss)
+    orcid: "https://orcid.org/0000-0002-2541-6382"
+    role: "Data provider (MOFLUX RINEX v2.11)"
+
+  - family-names: Frankenberg
+    given-names: Christian
+    affiliation: California Institute of Technology (Caltech)
+    orcid: "https://orcid.org/0000-0002-0546-5857"
+    role: "Data provider (MOFLUX RINEX v2.11)"
+
+repository-code: "https://github.com/nfb2021/canvodpy-test-data"
+url: "https://github.com/nfb2021/canvodpy"
+license: Apache-2.0
+version: "0.1.0"
+date-released: "2026-04-19"
+
+keywords:
+  - GNSS
+  - GNSS Transmissometry
+  - Vegetation Optical Depth
+  - VOD
+  - RINEX
+  - SBF
+  - NMEA
+  - remote sensing
+  - vegetation
+  - test data
+  - canVODpy
+
+references:
+  - type: software
+    title: "canVODpy"
+    authors:
+      - family-names: Bader
+        given-names: Nicolas François
+    repository-code: "https://github.com/nfb2021/canvodpy"
