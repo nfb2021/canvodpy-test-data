@@ -191,14 +191,14 @@ The `.gitignore` excludes:
 
 ## Data providers
 
-| Contributor             | Affiliation                       | Data                               |
-| ----------------------- | --------------------------------- | ---------------------------------- |
-| Nicolas François Bader  | CLIMERS, TU Wien                  | Rosalia RINEX v3.04, SBF, NMEA     |
-| Wouter Dorigo           | CLIMERS, TU Wien                  | Rosalia RINEX v3.04, SBF, NMEA     |
-| Eugenio Diaz-Pines      | BFW / KIT / UPM / BOKU           | Head of Rosalia Research Forest    |
-| Christian Frankenberg   | Caltech                           | MOFLUX RINEX v2.11                 |
-| Vincent Humphrey        | MeteoSwiss                        | MOFLUX RINEX v2.11                 |
-| Konstantin Schellenberg | FSU Jena / MPI-BGC                | Hainich NMEA (u-blox NEO-M9N)      |
+| Contributor             | Affiliation            | Data                            |
+| ----------------------- | ---------------------- | ------------------------------- |
+| Nicolas François Bader  | CLIMERS, TU Wien       | Rosalia RINEX v3.04, SBF, NMEA  |
+| Wouter Dorigo           | CLIMERS, TU Wien       | Rosalia RINEX v3.04, SBF, NMEA  |
+| Eugenio Diaz-Pines      | BFW / KIT / UPM / BOKU | Head of Rosalia Research Forest |
+| Konstantin Schellenberg | FSU Jena / MPI-BGC     | Hainich NMEA (u-blox NEO-M9N)   |
+| Vincent Humphrey        | MeteoSwiss             | MOFLUX RINEX v2.11              |
+| Christian Frankenberg   | Caltech                | MOFLUX RINEX v2.11              |
 
 ---
 
@@ -225,17 +225,17 @@ Each archive maps 1:1 to a top-level subdirectory under `valid/`. After extracti
 all archives reconstruct the same `valid/` tree and require no path changes in
 `_paths.py`.
 
-| Archive                       | Contents                                            | Approx. compressed size |
-| ----------------------------- | --------------------------------------------------- | ----------------------- |
-| `rinex_v3_04.tar.gz`          | RINEX v3.04 obs, Rosalia                            | ~160 MB                 |
-| `sbf.tar.gz`                  | SBF binary, Rosalia                                 | ~2.2 GB                 |
-| `nmea.tar.gz`                 | NMEA, Rosalia + Hainich                             | ~35 MB                  |
-| `aux_data.tar.gz`             | SP3, CLK, `aux_2025001.zarr`                        | ~290 MB                 |
-| `rinex_v2_11.tar.gz`          | RINEX v2.11, MOFLUX                                 | ~9 MB                   |
-| `rinex_v3_05_stripped.tar.gz` | Stripped RINEX v3.05, ExampleSite (MPI-BGC)         | < 1 MB                  |
-| `nav_data.tar.gz`             | RINEX nav data (.25p), Rosalia                      | ~1.5 MB                 |
-| `stores.tar.gz`               | Icechunk store snapshot, Rosalia                    | < 1 MB                  |
-| `invalid.tar.gz`              | 36 malformed RINEX files                            | ~2.5 MB                 |
+| Archive                       | Contents                                    | Approx. compressed size |
+| ----------------------------- | ------------------------------------------- | ----------------------- |
+| `rinex_v3_04.tar.gz`          | RINEX v3.04 obs, Rosalia                    | ~160 MB                 |
+| `sbf.tar.gz`                  | SBF binary, Rosalia                         | ~2.2 GB                 |
+| `nmea.tar.gz`                 | NMEA, Rosalia + Hainich                     | ~35 MB                  |
+| `aux_data.tar.gz`             | SP3, CLK, `aux_2025001.zarr`                | ~290 MB                 |
+| `rinex_v2_11.tar.gz`          | RINEX v2.11, MOFLUX                         | ~9 MB                   |
+| `rinex_v3_05_stripped.tar.gz` | Stripped RINEX v3.05, ExampleSite (MPI-BGC) | < 1 MB                  |
+| `nav_data.tar.gz`             | RINEX nav data (.25p), Rosalia              | ~1.5 MB                 |
+| `stores.tar.gz`               | Icechunk store snapshot, Rosalia            | < 1 MB                  |
+| `invalid.tar.gz`              | 36 malformed RINEX files                    | ~2.5 MB                 |
 
 ### Pooch integration (`_paths.py`)
 
