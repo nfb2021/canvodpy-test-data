@@ -1,10 +1,8 @@
 {
   "title": "canVODpy — Test Data",
   "description": "Reference GNSS observation dataset for validation and end-to-end testing of the canVODpy GNSS Transmissometry pipeline. Contains real GNSS observations in RINEX v3.04, RINEX v2.11, RINEX v3.05 (stripped), Septentrio Binary Format (SBF), and NMEA formats from four field sites: Rosalia (Austria), Missouri Ozark Flux Tower (MOFLUX, USA), Hainich National Park (Germany), and a Max Planck Institute site (MPI-BGC). Covers DOY 2025-001 (full 24-hour day) for Rosalia and MOFLUX, and a 1-hour campaign on DOY 2026-001 for Hainich.",
-  "resource_type": {
-    "type": "dataset"
-  },
-  "license": "Apache-2.0",
+  "upload_type": "dataset",
+  "license": "apache-2.0",
   "creators": [
     {
       "name": "Bader, Nicolas François",
