@@ -60,7 +60,8 @@ repository-code: "https://github.com/nfb2021/canvodpy-test-data"
 url: "https://github.com/nfb2021/canvodpy"
 license: Apache-2.0
 version: "0.1.0"
-date-released: "2026-04-19"
+date-released: "2026-04-23"
+doi: "10.5281/zenodo.19708759"
 
 keywords:
   - GNSS
