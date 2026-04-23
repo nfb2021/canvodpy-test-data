@@ -59,7 +59,12 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/nfb2021/canvodpy",
+      "identifier": "10.5281/zenodo.18496233",
+      "relation": "isSupplementTo",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/nfb2021/canvodpy-demo",
       "relation": "isSupplementTo",
       "scheme": "url"
     }

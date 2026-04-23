@@ -217,7 +217,7 @@ Metadata is prepared in `.zenodo.json` and `CITATION.cff`.
   included in the GitHub release archive and in `aux_data.tar.gz`. Required by demo
   notebooks 07 and 17.
 - [x] Rename `valid/broadcast_epehemrides/` → `valid/broadcast_ephemerides/` (typo fixed).
-- [ ] Add `related_identifiers` entry for `canvodpy-demo` once that repo is public.
+- [x] Add `related_identifiers` entry for `canvodpy-demo` once that repo is public.
 
 ### Archive structure (Option A — one archive per format type)
 
