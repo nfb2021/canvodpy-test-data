@@ -194,7 +194,7 @@ The `.gitignore` excludes:
 | ----------------------- | ---------------------- | ------------------------------- |
 | Nicolas François Bader  | CLIMERS, TU Wien       | Rosalia RINEX v3.04, SBF, NMEA  |
 | Wouter Dorigo           | CLIMERS, TU Wien       | Rosalia RINEX v3.04, SBF, NMEA  |
-| Eugenio Diaz-Pines      | BFW / KIT / UPM / BOKU | Head of Rosalia Research Forest |
+| Eugenio Diaz-Pines      | Forest Demonstration Centre, BOKU University; Institute of Soil Research, BOKU University | Head of Rosalia Research Forest |
 | Konstantin Schellenberg | FSU Jena / MPI-BGC     | Hainich NMEA (u-blox NEO-M9N)   |
 | Vincent Humphrey        | MeteoSwiss             | MOFLUX RINEX v2.11              |
 | Christian Frankenberg   | Caltech                | MOFLUX RINEX v2.11              |
