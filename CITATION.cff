@@ -27,7 +27,9 @@ contributors:
     given-names: Konstantin
     affiliation: Friedrich Schiller University Jena, Max Planck Institute for Biogeochemistry
     orcid: "https://orcid.org/0000-0002-2563-9017"
-    role: "Data collector (Hainich NMEA, u-blox NEO-M9N)"
+    role: >-
+      Data collector (Hainich NMEA, u-blox NEO-M9N; stripped RINEX v3.05,
+      ExampleSite)
 
   - family-names: Dorigo
     given-names: Wouter

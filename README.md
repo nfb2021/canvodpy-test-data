@@ -12,7 +12,7 @@
 
 # canVODpy — Test Data
 
-Reference GNSS dataset for [canVODpy](https://github.com/nfb2021/canvodpy) pipeline validation and end-to-end testing. Contains real observations from **Rosalia, Austria** — DOY **2025-001** (2025-01-01), full 24-hour day. RINEX 2.11 data is from **MOFLUX, MO, US** on DOY **2025-001** by courtesy of Caltech via Christian Frankenberg. NMEA data is from **Hainich Nationalpark** receiver recorded with a **u-blox NEO-M9N** receiver (1 hour on DOY **2026-001**).
+Reference GNSS dataset for [canVODpy](https://github.com/nfb2021/canvodpy) pipeline validation and end-to-end testing. Contains real observations from **Rosalia, Austria** — DOY **2025-001** (2025-01-01), full 24-hour day. RINEX 2.11 data is from **MOFLUX, MO, US** on DOY **2025-001** by courtesy of Caltech via Christian Frankenberg. NMEA data is from **Hainich Nationalpark** receiver recorded with a **u-blox NEO-M9N** receiver (1 hour on DOY **2026-001**). Stripped RINEX v3.05 data (SNR-only) is from a real Max Planck Institute for Biogeochemistry (MPI-BGC) field site — station name withheld, referred to as `ExampleSite` throughout.
 
 ## Usage
 
@@ -164,6 +164,26 @@ COD (Center for Orbit Determination in Europe) final products, 2025-001:
 
 ---
 
+## Stripped RINEX v3.05
+
+`valid/rinex_v3_05_stripped/01_ExampleSite/` contains real GNSS observations
+from an MPI-BGC field site (station name withheld — referred to as
+`ExampleSite`, station codes `EXPR01MPI`/`EXPA01MPI`), in **SNR-only
+stripped RINEX**: every `SYS / # / OBS TYPES` record starts with `S`, with
+pseudorange, carrier phase, Doppler, LLI, and SSI fields removed entirely.
+This is a real RINEX variant some receivers/pipelines produce deliberately
+— GNSS-T only ever needs SNR, and full observables make the already-large
+daily files (multi-hundred MB) far more expensive to parse and store for no
+benefit to VOD retrieval.
+
+Read by `canvod.readers.rinex.v3_05_stripped.Rnxv3StrippedObs`, which
+enforces the SNR-only contract at load time (`StrippedRinexError` if any
+non-`S*` observable is present) and builds a dataset with a single `SNR`
+variable, skipping the auxiliary arrays the full `Rnxv3Obs` reader
+allocates for pseudorange/phase/Doppler.
+
+---
+
 ## Invalid test files
 
 The `invalid/` directory contains 36 malformed RINEX v3 observation files, each targeting a specific parser failure mode: truncation, corruption, structural violations, encoding issues, and edge cases (leap seconds, event epochs). Used by `test_reader_invalid.py` to verify graceful error handling.
@@ -186,7 +206,7 @@ The `.gitignore` excludes:
 | Nicolas François Bader  | CLIMERS, TU Wien       | Rosalia RINEX v3.04, SBF, NMEA  |
 | Wouter Dorigo           | CLIMERS, TU Wien       | Rosalia RINEX v3.04, SBF, NMEA  |
 | Eugenio Diaz-Pines      | Forest Demonstration Centre, BOKU University; Institute of Soil Research, BOKU University | Head of Rosalia Research Forest |
-| Konstantin Schellenberg | FSU Jena / MPI-BGC     | Hainich NMEA (u-blox NEO-M9N)   |
+| Konstantin Schellenberg | FSU Jena / MPI-BGC     | Hainich NMEA (u-blox NEO-M9N); stripped RINEX v3.05 (`ExampleSite`) |
 | Vincent Humphrey        | MeteoSwiss             | MOFLUX RINEX v2.11              |
 | Christian Frankenberg   | Caltech                | MOFLUX RINEX v2.11              |
 
