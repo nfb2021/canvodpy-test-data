@@ -75,13 +75,10 @@ test_data/
 │   ├── broadcast_ephemerides/                 # Broadcast ephemeris data (from SBF)
 │   │   └── 02_canopy/
 │   │
-│   ├── aux_data/                              # Precise ephemeris products + aux Zarr
-│   │   ├── 01_SP3/                            # COD0MGXFIN 2025-001 orbit (5 min)
-│   │   ├── 02_CLK/                            # COD0MGXFIN 2025-001 clock (30 s)
-│   │   └── aux_2025001.zarr/                  # Pre-computed SP3/CLK interpolation cache
-│   │
-│   └── stores/
-│       └── rosalia_rinex/                     # Icechunk store snapshot for store tests
+│   └── aux_data/                              # Precise ephemeris products + aux Zarr
+│       ├── 01_SP3/                            # COD0MGXFIN 2025-001 orbit (5 min)
+│       ├── 02_CLK/                            # COD0MGXFIN 2025-001 clock (30 s)
+│       └── aux_2025001.zarr/                  # Pre-computed SP3/CLK interpolation cache
 │
 ├── invalid/                                   # Malformed RINEX files for parser robustness
 │   ├── binary_garbage.25o
@@ -170,12 +167,6 @@ COD (Center for Orbit Determination in Europe) final products, 2025-001:
 ## Invalid test files
 
 The `invalid/` directory contains 36 malformed RINEX v3 observation files, each targeting a specific parser failure mode: truncation, corruption, structural violations, encoding issues, and edge cases (leap seconds, event epochs). Used by `test_reader_invalid.py` to verify graceful error handling.
-
----
-
-## Icechunk store snapshot
-
-`valid/stores/rosalia_rinex/` is a pre-built Icechunk store containing ingested RINEX data from the Rosalia canopy receiver. Used by store-level tests that need a real repository without running the full ingest pipeline.
 
 ---
 
