@@ -224,7 +224,6 @@ all archives reconstruct the same `valid/` tree and require no path changes in
 | `rinex_v2_11.tar.gz`          | RINEX v2.11, MOFLUX                         | ~9 MB                   |
 | `rinex_v3_05_stripped.tar.gz` | Stripped RINEX v3.05, ExampleSite (MPI-BGC) | < 1 MB                  |
 | `nav_data.tar.gz`             | RINEX nav data (.25p), Rosalia              | ~1.5 MB                 |
-| `stores.tar.gz`               | Icechunk store snapshot, Rosalia            | < 1 MB                  |
 | `invalid.tar.gz`              | 36 malformed RINEX files                    | ~2.5 MB                 |
 
 ### Pooch integration (`_paths.py`)
